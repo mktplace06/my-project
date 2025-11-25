@@ -63,7 +63,7 @@ const MEMBERS = [
     { 
         name: 'Murilo Vilela de Brito', 
         ra: '844853', 
-        photoUrl: 'https://i.postimg.cc/sDKHt9jT/Untitled-image.jpg', // Link Imgur corrigido
+        photoUrl: 'https://i.postimg.cc/sDKHt9jT/Untitled-image.jpg',
         description: 'Responsável pela compilação e análise inicial dos dados de **Globalização e Nova Ordem Mundial**, focando na correlação entre geopolítica e economia.'
     },
     { 
@@ -381,7 +381,7 @@ const ReferenciasView = () => (
             6. Referências e Indicações Bibliográficas
         </h2>
         <p className="text-lg text-gray-700 dark:text-gray-200 mb-6">
-            Fontes utilizadas para a fundamentação teórica e dos conceitos, seguindo as normas da ABNT.
+            Fontes utilizadas para a fundamentação teórica e dos conceitos.
         </p>
 
         <div className="space-y-4 text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-600 p-6 rounded-lg border border-gray-200 dark:border-gray-500">
@@ -408,9 +408,6 @@ const ReferenciasView = () => (
                     </li>
                 ))}
             </ul>
-            <p className="mt-4 font-semibold text-red-600 dark:text-red-400">
-                ATENÇÃO: Lembre-se que o plágio (cópia sem citação/referência) é avaliado com nota ZERO. **Você deve formatar as referências acima no padrão ABNT completo** (sobrenome em caixa alta, ponto, etc.) e garantir que todas as fontes usadas em seu trabalho estejam listadas.
-            </p>
         </div>
     </section>
 );
