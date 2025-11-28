@@ -37,10 +37,10 @@ const SunIcon = (props) => (
     </svg>
 );
 
-// Ícones de navegação (Substituídos por placeholders temporários legíveis)
-const NavIcon = ({ title, ...props }) => (
-    <div className="w-5 h-5 mr-3 flex items-center justify-center text-xs font-bold rounded-full bg-blue-500/10 dark:bg-blue-300/20 text-blue-500 dark:text-blue-300" {...props} title={title}>
-        {title.substring(0, 1)}
+// Ícones de navegação (REMOVIDOS para atender à solicitação)
+const NavIcon = (props) => (
+    <div className="w-5 h-5 mr-3 flex items-center justify-center text-xs font-bold" {...props}>
+        {/* Placeholder vazio */}
     </div>
 );
 
@@ -59,11 +59,11 @@ const App = () => {
     const projectCourse = "Estudos Contemporâneos";
     const projectSemester = "2025/2";
     
-    // URLs das charges
+    // URLs das charges e vídeos
     const RACISMO_CHARGE_URL = "https://i.postimg.cc/prCCR7L3/negl.png";
     const DESIGUALDADE_CHARGE_URL = "https://i.postimg.cc/TPK4QR3t/charg.jpg";
     const CIDADE_DE_DEUS_VIDEO_URL = "#"; // Sem vídeo, apenas o resumo
-    const END_OF_POVERTY_VIDEO_URL = "https://www.youtube.com/embed/nUd-y0Hamrg?si=VXNIcsqU-u6rc0Kv"; 
+    const END_OF_POVERTY_VIDEO_URL = "https://www.youtube.com/embed/nUd-y0Hamrg"; 
 
     // Dados de navegação
     const navItems = [
@@ -299,14 +299,15 @@ const App = () => {
         const videos = [
             { 
                 title: 'Unnatural Causes: Is Inequality Making Us Sick? (2008)', 
-                link: 'https://www.youtube.com/embed/videoseries?list=PLayHb3ehfKbfxdMAmIkFm2wlRikR4Ka6f', // Link real da Playlist
+                // CORREÇÃO: Usando URL de incorporação padrão (embed)
+                link: END_OF_POVERTY_VIDEO_URL, 
                 description: 'Investiga as origens históricas e estruturais da pobreza global e as raízes socioeconômicas e raciais da desigualdade na saúde, ligando-se diretamente aos temas de Racismo, Pobreza e Políticas Públicas.',
                 hasEmbed: true
             },
             // Documentário Cidade de Deus (Mantido o resumo e o placeholder para o link do vídeo)
             { 
                 title: 'Cidade de Deus (2002)', 
-                link: '#', 
+                link: CIDADE_DE_DEUS_VIDEO_URL, 
                 description: 'Cidade de Deus (2002), dirigido por Fernando Meirelles e baseado na obra de Paulo Lins, retrata a formação e a expansão do crime organizado em uma comunidade periférica do Rio de Janeiro entre as décadas de 1960 e 1980. A narrativa acompanha a trajetória de diversos personagens que crescem em um ambiente marcado pela pobreza, exclusão social, violência precoce e ausência quase total do Estado. A história é contada a partir da perspectiva de Buscapé, um jovem que busca escapar da violência e sonha em se tornar fotógrafo. Em contraste, vemos a ascensão de Zé Pequeno, que desde criança se envolve com o crime e se torna um dos traficantes mais temidos da região. O filme mostra como a falta de oportunidades, o racismo estrutural, a desigualdade econômica e a ausência de políticas públicas eficientes contribuem para que muitos jovens sejam empurrados para o crime como forma de sobrevivência. A produção também destaca o impacto da globalização e do crescimento urbano desordenado, evidenciando como comunidades marginalizadas acabam isoladas social, política e economicamente. A obra revela a falência das instituições públicas — como polícia, educação e assistência social - que deveriam oferecer suporte à população, mas se mostram ineficazes ou corrompidas. Mais do que retratar a violência, Cidade de Deus funciona como uma crítica social profunda, mostrando como fatores estruturais moldam trajetórias individuais. O filme evidencia a perpetuação de ciclos de pobreza e violência e demonstra que os problemas apresentados não são casos isolados, mas reflexos de desigualdades históricas no Brasil.',
                 hasEmbed: false
             }
@@ -389,7 +390,7 @@ const App = () => {
                 <h2 className="text-3xl font-bold text-emerald-500 dark:text-emerald-300 mb-8 border-b-2 border-emerald-500 dark:border-emerald-300 pb-2">
                     3. Mídia e Inspiração (Sugestões de Conteúdo)
                 </h2>
-                <p className="text-lg text-gray-700 dark:text-gray-200 mb-6">
+                <p className="lg text-gray-700 dark:text-gray-200 mb-6">
                     Material cuidadosamente selecionado para aprofundar seu conhecimento sobre os temas abordados.
                 </p>
 
@@ -420,7 +421,7 @@ const App = () => {
             <h2 className="text-3xl font-bold text-blue-500 dark:text-blue-400 mb-8 border-b-2 border-blue-500 dark:border-blue-400 pb-2">
                 4. ONGs: Ação da Cidadania
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-200 mb-6">
+            <p className="lg text-gray-700 dark:text-gray-200 mb-6">
                 Organização brasileira respeitada, focada em combate à fome e promoção da inclusão social.
             </p>
 
@@ -453,67 +454,83 @@ const App = () => {
             <h2 className="text-3xl font-bold text-emerald-500 dark:text-emerald-300 mb-8 border-b-2 border-emerald-500 dark:border-emerald-300 pb-2">
                 5. Experiências de Sucesso e Boas Práticas
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-200 mb-6">
+            <p className="lg text-gray-700 dark:text-gray-200 mb-6">
                 Iniciativas de ONGs ou grupos sociais que demonstraram resultados positivos no combate à desigualdade, racismo e na promoção da sustentabilidade.
             </p>
 
             <div className="space-y-6">
-                {/* Exemplo de Experiência 1: Mentoria Antirracista */}
+                {/* Exemplo de Experiência 1: Gerando Falcões (ÚNICA Experiência) */}
                 <article className="p-4 bg-gray-100 dark:bg-gray-600 rounded-lg border-l-4 border-blue-500 dark:border-blue-400 shadow-md">
-                    <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">Programa de Mentoria para Lideranças Negras</h3>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">Área: Combate ao Racismo e Justiça Social | Iniciativa: [ONG Local Local]</p>
-                    <p className="text-gray-700 dark:text-gray-200">
-                        O projeto foca em oferecer mentoria profissional e acadêmica para estudantes e jovens profissionais negros, visando quebrar as barreiras do racismo estrutural no mercado de trabalho e nas universidades. Através de um currículo focado em habilidades de liderança e representatividade, o programa obteve um aumento de 40% na taxa de empregabilidade dos participantes em cargos de gestão nos últimos dois anos, atuando como uma política de ação afirmativa de base comunitária.
+                    <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">Experiência de Sucesso: O Modelo da ONG Gerando Falcões</h3>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">Área: Pobreza e Transformação Social | Iniciativa: Gerando Falcões</p>
+                    <p className="text-gray-700 dark:text-gray-200 mb-4">
+                        A Gerando Falcões (GF) é considerada uma das experiências mais bem-sucedidas de transformação social em comunidades. Fundada por Edu Lyra, a ONG desenvolveu o conceito de "Favela 3D: Digital, Digna e Desenvolvida", que integra educação, geração de renda, sustentabilidade e políticas públicas. O sucesso do modelo se deve ao uso de gestão profissional, forte integração com o poder público para criar políticas eficientes e o envolvimento direto da comunidade.
                     </p>
-                </article>
+                    
+                    {/* Vídeo da Gerando Falcões */}
+                    <div className="aspect-w-16 aspect-h-9 mb-4 overflow-hidden rounded-lg">
+                        <iframe 
+                            className="w-full h-full"
+                            src="https://www.youtube.com/embed/1sUypKJxjB4" 
+                            title="Gerando Falcões: Apresentação" 
+                            frameBorder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerPolicy="strict-origin-when-cross-origin" 
+                            allowFullScreen
+                        ></iframe>
+                    </div>
 
-                {/* Exemplo de Experiência 2: Cooperativa de Reciclagem Sustentável */}
-                <article className="p-4 bg-gray-100 dark:bg-gray-600 rounded-lg border-l-4 border-blue-500 dark:border-blue-400 shadow-md">
-                    <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">Cooperativa Mãos Limpas: Inclusão e Sustentabilidade</h3>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">Área: Meio Ambiente e Pobreza | Iniciativa: [Cooperativa Local]</p>
-                    <p className="text-gray-700 dark:text-gray-200">
-                        Esta cooperativa de catadores, majoritariamente composta por mulheres em situação de vulnerabilidade, implementou um sistema de gestão de resíduos autossustentável. Além de aumentar a renda familiar em 30% para os cooperados (combatendo a pobreza), o projeto se tornou um modelo de economia circular na região, reduzindo a quantidade de lixo enviado a aterros sanitários e promovendo a educação ambiental na comunidade. O sucesso demonstra a interseção entre as dimensões social e ecológica da sustentabilidade.
+                    <p className="text-sm text-gray-700 dark:text-gray-200">
+                        **O que foi feito:** Implementação de programas educativos e profissionalizantes; parcerias com empresas para geração de emprego e renda; projetos de moradia digna, saneamento e revitalização urbana; adoção de práticas sustentáveis, como reciclagem e energia solar; acompanhamento familiar e apoio psicológico.
                     </p>
                 </article>
                 
-                {/* Adicionar mais exemplos de Experiências Exitosas */}
             </div>
         </section>
     );
 
     // 6. Visualização Referências
-    const ReferenciasView = () => (
-        <section>
-            <h2 className="text-3xl font-bold text-blue-500 dark:text-blue-400 mb-8 border-b-2 border-blue-500 dark:border-blue-400 pb-2">
-                6. Referências e Indicações Bibliográficas
-            </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-200 mb-6">
-                Fontes utilizadas para a fundamentação teórica e dos conceitos, seguindo as normas da ABNT.
-            </p>
+    const ReferenciasView = () => {
+        // References data defined here to avoid re-calculating
+        const references = [
+            { text: 'AÇÃO DA CIDADANIA. Website oficial.', url: 'https://www.acaodacidadania.org.br/' },
+            { text: 'Análise do Grupo. Conceito Próprio.', url: '#' },
+            { text: 'CIDADE DE DEUS (2002). Direção: Fernando Meirelles e Kátia Lund. (Resumo do Grupo, base: Análise da obra).', url: '#' },
+            { text: 'FGV. Políticas públicas: o que são, quem faz e como faz?', url: 'https://periodicos.fgv.br/cgpc/announcement/view/328' },
+            { text: 'GERANDO FALCÕES. Vídeo de Apresentação (YouTube).', url: 'https://youtu.be/1sUypKJxjB4' },
+            { text: 'MUNDO EDUCAÇÃO. Globalização: o que é, como surgiu, fases.', url: 'https://mundoeducacao.uol.com.br/geografia/globalizacao.htm' },
+            { text: 'QUERO BOLSA. Nova Ordem Mundial: entenda o que é e principais.', url: 'https://querobolsa.com.br/enem/historia-geral/nova-ordem-mundial' },
+            { text: 'REVISTA BRASILEIRA MULTIDISCIPLINAR. Estado e Governo: Diferença Conceitual e Implicações Práticas na Pós-Modernidade.', url: 'https://revistarebram.com/index.php/revistauniara/article/view/183' },
+            { text: 'SCIELO. Pobreza multidimensional no Brasil: uma análise do período 2004-2015.', url: 'https://www.scielo.br/j/rep/a/xqBvfZ5JqBZHvYqnFMNCcWv/' },
+            { text: 'STIGLITZ, Joseph. A Globalização e Seus Descontentes. (Resumo do Grupo, base: Wikipedia).', url: 'https://en.wikipedia.org/wiki/Globalization_and_Its_Discontents' }, 
+            { text: 'UFSM. Pobreza multidimensional: um estudo de caso das privações.', url: 'https://www.ufsm.br/app/uploads/sites/533/2019/05/POBREZA_MULTIDIMENSIONAL.pdf' },
+            { text: 'UNESP. A sustentabilidade e suas dimensões como fundamento da qualidade de vida.', url: 'https://revista.fct.unesp.br/index.php/geografiaematos/article/download/1724/sergiosilva/0' },
+            { text: 'UNNATURAL CAUSES: Is Inequality Making Us Sick? (2008). Direção: L. Adelman, L. Smith, W. Riseborough.', url: 'https://www.youtube.com/embed/nUd-y0Hamrg' },
+            { text: 'WIKIPÉDIA. Sustentabilidade.', url: 'https://pt.wikipedia.org/wiki/Sustentabilidade' },
+        ];
+        
+        return (
+            <section>
+                <h2 className="text-3xl font-bold text-blue-500 dark:text-blue-400 mb-8 border-b-2 border-blue-500 dark:border-blue-400 pb-2">
+                    6. Referências e Indicações Bibliográficas
+                </h2>
+                <p className="lg text-gray-700 dark:text-gray-200 mb-6">
+                    Fontes utilizadas para a fundamentação teórica e dos conceitos, seguindo as normas da ABNT.
+                </p>
 
-            <div className="space-y-4 text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-600 p-6 rounded-lg border border-gray-200 dark:border-gray-500">
-                <h3 className="xl font-bold text-gray-800 dark:text-white mb-3">Referências dos Conceitos</h3>
-                <ul className="list-disc ml-6 space-y-3 text-sm">
-                    {[
-                        { text: 'Análise do Grupo. Conceito Próprio.', url: '#' },
-                        { text: 'FGV. Políticas públicas: o que são, quem faz e como faz?', url: 'https://periodicos.fgv.br/cgpc/announcement/view/328' },
-                        { text: 'MUNDO EDUCAÇÃO. Globalização: o que é, como surgiu, fases.', url: 'https://mundoeducacao.uol.com.br/geografia/globalizacao.htm' },
-                        { text: 'QUERO BOLSA. Nova Ordem Mundial: entenda o que é e principais.', url: 'https://querobolsa.com.br/enem/historia-geral/nova-ordem-mundial' },
-                        { text: 'REVISTA BRASILEIRA MULTIDISCIPLINAR. Estado e Governo: Diferença Conceitual e Implicações Práticas na Pós-Modernidade.', url: 'https://revistarebram.com/index.php/revistauniara/article/view/183' },
-                        { text: 'SCIELO. Pobreza multidimensional no Brasil: uma análise do período 2004-2015.', url: 'https://www.scielo.br/j/rep/a/xqBvfZ5JqBZHvYqnFMNCcWv/' },
-                        { text: 'STIGLITZ, Joseph. A Globalização e Seus Descontentes. (Resumo do Grupo, base: Wikipedia).', url: 'https://en.wikipedia.org/wiki/Globalization_and_Its_Discontents' }, 
-                        { text: 'UFSM. Pobreza multidimensional: um estudo de caso das privações.', url: 'https://www.ufsm.br/app/uploads/sites/533/2019/05/POBREZA_MULTIDIMENSIONAL.pdf' },
-                        { text: 'UNESP. A sustentabilidade e suas dimensões como fundamento da qualidade de vida.', url: 'https://revista.fct.unesp.br/index.php/geografiaematos/article/download/1724/sergiosilva/0' },
-                        { text: 'WIKIPÉDIA. Sustentabilidade.', url: 'https://pt.wikipedia.org/wiki/Sustentabilidade' },
-                    ].map((ref, index) => (
-                        <li key={index}>
-                            {ref.text} Disponível em: &lt;<a href={ref.url} target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-blue-400 hover:underline">{ref.url}</a>&gt;. Acesso em: 17 nov. 2025.
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        </section>
-    );
+                <div className="space-y-4 text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-600 p-6 rounded-lg border border-gray-200 dark:border-gray-500">
+                    <h3 className="xl font-bold text-gray-800 dark:text-white mb-3">Referências dos Conceitos</h3>
+                    <ul className="list-disc ml-6 space-y-3 text-sm">
+                        {references.map((ref, index) => (
+                            <li key={index}>
+                                {ref.text} Disponível em: &lt;<a href={ref.url} target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-blue-400 hover:underline">{ref.url}</a>&gt;. Acesso em: 17 nov. 2025.
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </section>
+        );
+    };
 
     // --- LÓGICA DO COMPONENTE PRINCIPAL ---
     
@@ -609,9 +626,9 @@ const App = () => {
                                 <button
                                     key={item.id}
                                     onClick={() => handleNavClick(item.id)}
-                                    className={`p-3 rounded-lg text-left hover:bg-gray-100 dark:hover:bg-gray-600 transition-all flex items-center ${colorClass} ${isActive ? 'bg-blue-500/10 dark:bg-blue-300/20 shadow-sm' : ''}`}
+                                    // Removido o NavIcon do item aqui
+                                    className={`p-3 rounded-lg text-left hover:bg-gray-100 dark:hover:bg-gray-600 transition-all ${colorClass} ${isActive ? 'bg-blue-500/10 dark:bg-blue-300/20 shadow-sm' : ''}`}
                                 >
-                                    <NavIcon title={item.icon} />
                                     {item.title}
                                 </button>
                             );
