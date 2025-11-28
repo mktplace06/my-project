@@ -64,6 +64,9 @@ const App = () => {
     const DESIGUALDADE_CHARGE_URL = "https://i.postimg.cc/TPK4QR3t/charg.jpg";
     const CIDADE_DE_DEUS_VIDEO_URL = "#"; // Sem vídeo, apenas o resumo
     const END_OF_POVERTY_VIDEO_URL = "https://www.youtube.com/embed/nUd-y0Hamrg"; 
+    const GERANDO_FALCOES_VIDEO_URL = "https://www.youtube.com/embed/1sUypKJxjB4";
+    const GERANDO_PALESTRA_URL = "https://www.youtube.com/embed/R0aP1XK6rus";
+
 
     // Dados de navegação
     const navItems = [
@@ -161,6 +164,7 @@ const App = () => {
                 </p>
             </div>
             
+            {/* Otimização de responsividade: 3 colunas em LG, 2 em SM, 1 em Mobile */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
                 
                 {MEMBERS.map((member, index) => (
@@ -222,6 +226,7 @@ const App = () => {
                     
                     {/* Charge de Racismo - Inserida aqui */}
                     <div className="mt-4 p-3 bg-red-50 dark:bg-red-900/50 rounded-lg border border-red-400 dark:border-red-600 text-center">
+                        {/* Otimização de imagem para mobile: Largura total com altura auto */}
                         <img src={RACISMO_CHARGE_URL} alt="Charge sobre Racismo Estrutural: Duas pessoas brancas e uma pessoa negra, e uma mão aponta para o jovem negro dizendo: 'NÃO TEMOS CERTEZA, MAS FOI ELE!'" className="w-full h-auto max-h-64 object-contain mx-auto rounded-lg"/>
                         <p className="text-xs italic text-red-500 dark:text-red-400 mt-2">
                             Charge: Crítica à criminalização seletiva e ao racismo institucional.
@@ -255,6 +260,7 @@ const App = () => {
                     
                     {/* Charge de Desigualdade - Inserida aqui */}
                     <div className="mt-4 p-3 bg-red-50 dark:bg-red-900/50 rounded-lg border border-red-400 dark:border-red-600 text-center">
+                        {/* Otimização de imagem para mobile: Largura total com altura auto */}
                         <img src={DESIGUALDADE_CHARGE_URL} alt="Charge sobre Pobreza e Direitos Humanos: Uma família sentada na rua lendo o livro 'Direitos Humanos', enquanto o filho diz: 'Pai, eu quero viver nesse mundo!'" className="w-full h-auto max-h-64 object-contain mx-auto rounded-lg"/>
                         <p className="text-xs italic text-red-500 dark:text-red-400 mt-2">
                             Charge: Crítica à discrepância entre os direitos garantidos na lei e a realidade da pobreza.
@@ -299,7 +305,6 @@ const App = () => {
         const videos = [
             { 
                 title: 'Unnatural Causes: Is Inequality Making Us Sick? (2008)', 
-                // CORREÇÃO: Usando URL de incorporação padrão (embed)
                 link: END_OF_POVERTY_VIDEO_URL, 
                 description: 'Investiga as origens históricas e estruturais da pobreza global e as raízes socioeconômicas e raciais da desigualdade na saúde, ligando-se diretamente aos temas de Racismo, Pobreza e Políticas Públicas.',
                 hasEmbed: true
@@ -313,9 +318,14 @@ const App = () => {
             }
         ];
 
+        // APENAS UMA PALESTRA (Gerando Falcões), conforme última solicitação.
         const palestras = [
-            { title: 'Como construir uma sociedade justa? - Prof. Cortella', link: '#', description: 'Foco na ética e na filosofia para promover a justiça social e a equidade.' },
-            { title: 'O que o racismo tem a ver com o meio ambiente? - Dr. [Nome do Especialista]', link: '#', description: 'Aborda o conceito de justiça ambiental, mostrando como as minorias são desproporcionalmente afetadas pela degradação ambiental.' },
+            { 
+                title: 'Transformando Vidas: O Impacto da Gerando Falcões (Edu Lyra)', 
+                link: GERANDO_PALESTRA_URL, 
+                description: 'Apresentação de Edu Lyra sobre a metodologia da Gerando Falcões e o conceito de "Favela 3D", mostrando como a inovação e o empreendedorismo social podem transformar a pobreza em potência.', 
+                hasEmbed: true 
+            },
         ];
 
         const renderContent = () => {
@@ -341,10 +351,12 @@ const App = () => {
                             {videos.map((v, i) => (
                                 <div key={i} className="bg-gray-100 dark:bg-gray-600 p-6 rounded-lg border border-gray-200 dark:border-gray-500">
                                     <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-3">{v.title}</h4>
-                                    <div className="aspect-w-16 aspect-h-9 mb-4 overflow-hidden rounded-lg">
-                                        {v.hasEmbed ? (
+                                    
+                                    {/* Embed do Vídeo (Otimizado para Responsividade) */}
+                                    {v.hasEmbed && v.link !== CIDADE_DE_DEUS_VIDEO_URL ? (
+                                        <div className="w-full relative overflow-hidden rounded-lg mb-4" style={{ paddingTop: '56.25%' }}> {/* 16:9 Aspect Ratio */}
                                             <iframe 
-                                                className="w-full h-full"
+                                                className="absolute top-0 left-0 w-full h-full"
                                                 src={v.link} 
                                                 title={v.title} 
                                                 frameBorder="0" 
@@ -352,12 +364,13 @@ const App = () => {
                                                 referrerPolicy="strict-origin-when-cross-origin" 
                                                 allowFullScreen
                                             ></iframe>
-                                        ) : (
-                                            <div className="w-full h-64 bg-gray-300 dark:bg-gray-500 flex items-center justify-center text-gray-600 dark:text-gray-300">
-                                                <p className="p-4 text-center">ESTE É APENAS UM RESUMO. NÃO HÁ VÍDEO PARA INCORPORAÇÃO.</p>
-                                            </div>
-                                        )}
-                                    </div>
+                                        </div>
+                                    ) : (
+                                        <div className="w-full h-64 bg-gray-300 dark:bg-gray-500 flex items-center justify-center text-gray-600 dark:text-gray-300 rounded-lg mb-4">
+                                            <p className="p-4 text-center font-semibold">RESUMO DO FILME. Não há vídeo para incorporação.</p>
+                                        </div>
+                                    )}
+
                                     <p className="text-gray-700 dark:text-gray-200">{v.description}</p>
                                 </div>
                             ))}
@@ -365,19 +378,33 @@ const App = () => {
                     );
                 case 'palestras':
                     return (
-                        <div className="space-y-4 text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-600 p-6 rounded-lg border border-gray-200 dark:border-gray-500">
+                        <div className="space-y-6 text-gray-700 dark:text-gray-200">
                             <h3 className="2xl font-semibold text-blue-500 dark:text-blue-400 mb-4">Palestras On-line</h3>
-                            <p className="text-sm italic text-gray-600 dark:text-gray-400 mb-4">
-                                **ATENÇÃO:** Envie os links de *embed* reais para as palestras.
-                            </p>
-                            <ul className="list-disc ml-6 space-y-3">
-                                {palestras.map((p, i) => (
-                                    <li key={i}>
-                                        <strong className="text-gray-800 dark:text-white">{p.title}</strong>
-                                        <p className="text-sm italic text-gray-600 dark:text-gray-400">Foco: {p.description}</p>
-                                    </li>
-                                ))}
-                            </ul>
+                            {palestras.map((p, i) => (
+                                <div key={i} className="bg-gray-100 dark:bg-gray-600 p-6 rounded-lg border border-gray-200 dark:border-gray-500">
+                                    <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-3">{p.title}</h4>
+
+                                    {p.hasEmbed ? (
+                                        <div className="w-full relative overflow-hidden rounded-lg mb-4" style={{ paddingTop: '56.25%' }}>
+                                            <iframe 
+                                                className="absolute top-0 left-0 w-full h-full"
+                                                src={p.link} 
+                                                title={p.title} 
+                                                frameBorder="0" 
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                                referrerPolicy="strict-origin-when-cross-origin" 
+                                                allowFullScreen
+                                            ></iframe>
+                                        </div>
+                                    ) : (
+                                        <div className="w-full h-24 bg-gray-300 dark:bg-gray-500 flex items-center justify-center text-gray-600 dark:text-gray-300 rounded-lg mb-4">
+                                            <p className="p-4 text-center font-semibold">LINK DE EMBED PENDENTE.</p>
+                                        </div>
+                                    )}
+
+                                    <p className="text-gray-700 dark:text-gray-200">Foco: {p.description}</p>
+                                </div>
+                            ))}
                         </div>
                     );
                 default:
@@ -439,9 +466,6 @@ const App = () => {
                         <li>
                             <strong className="text-emerald-500 dark:text-emerald-300">Website:</strong> <a href="https://www.acaodacidadania.org.br/" target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-blue-400 hover:underline">https://www.acaodacidadania.org.br/</a>
                         </li>
-                        <li>
-                            <strong className="text-emerald-500 dark:text-emerald-300">Endereço Eletrônico:</strong> <a href="mailto:faleconosco@acaodacidadania.org.br" className="text-blue-500 dark:text-blue-400 hover:underline">faleconosco@acaodacidadania.org.br</a>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -468,10 +492,10 @@ const App = () => {
                     </p>
                     
                     {/* Vídeo da Gerando Falcões */}
-                    <div className="aspect-w-16 aspect-h-9 mb-4 overflow-hidden rounded-lg">
+                    <div className="w-full relative overflow-hidden rounded-lg mb-4" style={{ paddingTop: '56.25%' }}>
                         <iframe 
-                            className="w-full h-full"
-                            src="https://www.youtube.com/embed/1sUypKJxjB4" 
+                            className="absolute top-0 left-0 w-full h-full"
+                            src={GERANDO_FALCOES_VIDEO_URL} 
                             title="Gerando Falcões: Apresentação" 
                             frameBorder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -587,7 +611,7 @@ const App = () => {
                             {isSidebarOpen ? <CloseIcon /> : <MenuIcon />}
                         </button>
                         <div className="text-2xl font-extrabold text-emerald-500 dark:text-emerald-300 cursor-pointer" onClick={() => setCurrentPage('home')}>
-                            SITE CRÍTICO
+                            TRABALHO DE ESTUDOS CONTEMPORÂNEOS
                         </div>
                     </div>
 
