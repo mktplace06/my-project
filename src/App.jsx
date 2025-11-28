@@ -174,7 +174,8 @@ const App = () => {
                              onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/120x120/CC0000/FFFFFF?text=ERRO+FOTO"; }}
                              className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-emerald-500 dark:border-emerald-300"/>
                         
-                        <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-1">{member.name}</h3>
+                        {/* Redução de fonte em mobile para o nome */}
+                        <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white mb-1">{member.name}</h3>
                         <p className="text-sm text-blue-500 dark:text-blue-400 mb-3">RA: {member.ra}</p>
                         <p className="text-gray-700 dark:text-gray-200 text-left italic text-sm">
                             {member.description}
@@ -195,13 +196,14 @@ const App = () => {
             <div className="grid md:grid-cols-2 gap-8">
                 {/* Conceito 1: Globalização & Nova Ordem Mundial (Unidos) */}
                 <div className="bg-gray-100 dark:bg-gray-600 p-6 rounded-lg shadow-md border-l-4 border-emerald-500 dark:border-emerald-300">
-                    <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">Globalização & Nova Ordem Mundial</h3>
+                    {/* Redução de fonte em mobile para o título */}
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white mb-3">Globalização & Nova Ordem Mundial</h3>
                     <p className="text-gray-700 dark:text-gray-200 mb-4">
                         A Globalização é o processo de intensa integração econômica, política, social e cultural em escala mundial, impulsionada pelo desenvolvimento de transportes e comunicações. A **Nova Ordem Mundial** refere-se à configuração geopolítica que sucedeu a Guerra Fria, marcada pela multipolaridade econômica (EUA, UE, Japão, China) e pela aceleração da própria Globalização. Este fenómeno estabelece a hegemonia do sistema capitalista e a interdependência entre nações, mas também acirra desigualdades e conflitos regionais (Mundo Educação; Quero Bolsa, acesso em Nov. 2025).
                     </p>
 
                     {/* Crítica da Globalização - Adicionado a pedido do usuário */}
-                    <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-2 border-t pt-3 dark:border-gray-500">
+                    <h4 className="text-base sm:text-lg font-semibold text-gray-800 dark:text-white mb-2 border-t pt-3 dark:border-gray-500">
                         Crítica da Governança Global (Joseph Stiglitz)
                     </h4>
                     <p className="text-gray-700 dark:text-gray-200 mb-3 text-sm italic">
@@ -219,7 +221,8 @@ const App = () => {
 
                 {/* Conceito 2: Racismo e Desigualdade Estrutural (Com Charge) */}
                 <div className="bg-gray-100 dark:bg-gray-600 p-6 rounded-lg shadow-md border-l-4 border-red-600 dark:border-red-400">
-                    <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">Racismo e Desigualdade Estrutural</h3>
+                    {/* Redução de fonte em mobile para o título */}
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white mb-3">Racismo e Desigualdade Estrutural</h3>
                     <p className="text-gray-700 dark:text-gray-200 mb-3">
                         O Racismo Estrutural é o conjunto de práticas e mecanismos institucionais e sociais que privilegiam grupos majoritários e sistematicamente desfavorecem grupos minoritários, como a população negra, em acesso à educação, saúde, justiça e renda. Diferente do ato individual, o racismo estrutural opera na base da sociedade, perpetuando desigualdades históricas e econômicas.
                     </p>
@@ -240,7 +243,8 @@ const App = () => {
 
                 {/* Conceito 3: Políticas Públicas & Estado/Governo (Unidos) */}
                 <div className="bg-gray-100 dark:bg-gray-600 p-6 rounded-lg shadow-md border-l-4 border-emerald-500 dark:border-emerald-300">
-                    <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">Políticas Públicas & Estado/Governo</h3>
+                    {/* Redução de fonte em mobile para o título */}
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white mb-3">Políticas Públicas & Estado/Governo</h3>
                     <p className="text-gray-700 dark:text-gray-200 mb-3">
                         O **Estado** é a instituição política permanente que detém soberania sobre um território e povo. O **Governo** é o grupo temporário que administra e executa o poder. As **Políticas Públicas** são o conjunto de ações e programas implementados pelo Governo, dentro da estrutura do Estado, para concretizar direitos sociais e solucionar problemas de interesse público (Ex: saúde, educação, habitação). A distinção é crucial para entender a permanência das instituições (Estado) versus a transitoriedade da gestão (Governo) (Revista Brasileira Multidisciplinar; FGV, acesso em Nov. 2025).
                     </p>
@@ -253,7 +257,8 @@ const App = () => {
 
                 {/* Conceito 4: Pobreza (Multidimensional) - Com Charge de Desigualdade */}
                 <div className="bg-gray-100 dark:bg-gray-600 p-6 rounded-lg shadow-md border-l-4 border-emerald-500 dark:border-emerald-300">
-                    <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">Pobreza (Multidimensional)</h3>
+                    {/* Redução de fonte em mobile para o título */}
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white mb-3">Pobreza (Multidimensional)</h3>
                     <p className="text-gray-700 dark:text-gray-200 mb-3">
                         O conceito moderno de Pobreza Multidimensional transcende a mera falta de renda (pobreza monetária). Ele mede a privação de direitos básicos em dimensões como **saúde, educação e padrão de vida** (acesso a água, saneamento, eletricidade, etc.). A pobreza, nesse sentido, é uma condição estrutural de ausência de capacidades e acessos necessários para o pleno desenvolvimento humano, sendo um reflexo das desigualdades históricas e da má distribuição de recursos (UFSM; SciELO, acesso em Nov. 2025).
                     </p>
@@ -276,7 +281,8 @@ const App = () => {
 
                 {/* Conceito 5: Dimensões da Sustentabilidade */}
                 <div className="bg-gray-100 dark:bg-gray-600 p-6 rounded-lg shadow-md border-l-4 border-emerald-500 dark:border-emerald-300 col-span-full">
-                    <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">Dimensões da Sustentabilidade</h3>
+                    {/* Redução de fonte em mobile para o título */}
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white mb-3">Dimensões da Sustentabilidade</h3>
                     <p className="text-gray-700 dark:text-gray-200 mb-3">
                         A Sustentabilidade exige um equilíbrio entre as dimensões **Social** (equidade), **Econômica** (eficiência), **Ambiental/Ecológica** (preservação de recursos), **Geográfica** (organização espacial) e **Cultural** (respeito à diversidade). O desenvolvimento sustentável é aquele que atende às necessidades do presente sem comprometer a capacidade das futuras gerações de atenderem às suas próprias necessidades, requerendo uma abordagem integrada das políticas públicas (Wikipédia; Unesp, acesso em Nov. 2025).
                     </p>
@@ -333,11 +339,13 @@ const App = () => {
                 case 'musicas':
                     return (
                         <div className="space-y-4 text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-600 p-6 rounded-lg border border-gray-200 dark:border-gray-500">
-                            <h3 className="text-2xl font-semibold text-blue-500 dark:text-blue-400 mb-4">Músicas</h3>
+                            {/* Redução de fonte em mobile para o título */}
+                            <h3 className="text-xl sm:text-2xl font-semibold text-blue-500 dark:text-blue-400 mb-4">Músicas</h3>
                             <ul className="list-disc ml-6 space-y-3">
                                 {musicas.map((m, i) => (
                                     <li key={i}>
-                                        <strong className="text-gray-800 dark:text-white">{m.title}</strong>
+                                        {/* Redução de fonte para o negrito nos itens de lista */}
+                                        <strong className="text-sm sm:text-base text-gray-800 dark:text-white">{m.title}</strong>
                                         <p className="text-sm italic text-gray-600 dark:text-gray-400">{m.description}</p>
                                     </li>
                                 ))}
@@ -347,10 +355,12 @@ const App = () => {
                 case 'videos':
                     return (
                         <div className="space-y-6 text-gray-700 dark:text-gray-200">
-                            <h3 className="text-2xl font-semibold text-blue-500 dark:text-blue-400 mb-4">Vídeos e Documentários</h3>
+                            {/* Redução de fonte em mobile para o título */}
+                            <h3 className="text-xl sm:text-2xl font-semibold text-blue-500 dark:text-blue-400 mb-4">Vídeos e Documentários</h3>
                             {videos.map((v, i) => (
                                 <div key={i} className="bg-gray-100 dark:bg-gray-600 p-6 rounded-lg border border-gray-200 dark:border-gray-500">
-                                    <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-3">{v.title}</h4>
+                                    {/* Redução de fonte em mobile para o título do vídeo */}
+                                    <h4 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white mb-3">{v.title}</h4>
                                     
                                     {/* Embed do Vídeo (Otimizado para Responsividade) */}
                                     {v.hasEmbed && v.link !== CIDADE_DE_DEUS_VIDEO_URL ? (
@@ -379,10 +389,12 @@ const App = () => {
                 case 'palestras':
                     return (
                         <div className="space-y-6 text-gray-700 dark:text-gray-200">
-                            <h3 className="2xl font-semibold text-blue-500 dark:text-blue-400 mb-4">Palestras On-line</h3>
+                            {/* Redução de fonte em mobile para o título */}
+                            <h3 className="text-xl sm:text-2xl font-semibold text-blue-500 dark:text-blue-400 mb-4">Palestras On-line</h3>
                             {palestras.map((p, i) => (
                                 <div key={i} className="bg-gray-100 dark:bg-gray-600 p-6 rounded-lg border border-gray-200 dark:border-gray-500">
-                                    <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-3">{p.title}</h4>
+                                    {/* Redução de fonte em mobile para o título da palestra */}
+                                    <h4 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white mb-3">{p.title}</h4>
 
                                     {p.hasEmbed ? (
                                         <div className="w-full relative overflow-hidden rounded-lg mb-4" style={{ paddingTop: '56.25%' }}>
@@ -455,16 +467,20 @@ const App = () => {
             <div className="space-y-6">
                 {/* Ação da Cidadania (Única ONG) */}
                 <div className="p-4 bg-gray-100 dark:bg-gray-600 rounded-lg border border-gray-200 dark:border-gray-500">
-                    <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">Ação da Cidadania (Brasil)</h3>
+                    {/* Redução de fonte em mobile para o título */}
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white mb-3">Ação da Cidadania (Brasil)</h3>
                     <ul className="space-y-2 text-gray-700 dark:text-gray-200 list-disc ml-6">
                         <li>
-                            <strong className="text-emerald-500 dark:text-emerald-300">Missão:</strong> Focada em combate à fome, pobreza e exclusão social.
+                            {/* Redução de fonte para o negrito nos itens de lista */}
+                            <strong className="text-sm sm:text-base text-emerald-500 dark:text-emerald-300">Missão:</strong> Focada em combate à fome, pobreza e exclusão social.
                         </li>
                         <li>
-                            <strong className="text-emerald-500 dark:text-emerald-300">Atuação:</strong> Atua com distribuição de alimentos, políticas públicas e desenvolvimento comunitário.
+                            {/* Redução de fonte para o negrito nos itens de lista */}
+                            <strong className="text-sm sm:text-base text-emerald-500 dark:text-emerald-300">Atuação:</strong> Atua com distribuição de alimentos, políticas públicas e desenvolvimento comunitário.
                         </li>
                         <li>
-                            <strong className="text-emerald-500 dark:text-emerald-300">Website:</strong> <a href="https://www.acaodacidadania.org.br/" target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-blue-400 hover:underline">https://www.acaodacidadania.org.br/</a>
+                            {/* Redução de fonte para o negrito nos itens de lista */}
+                            <strong className="text-sm sm:text-base text-emerald-500 dark:text-emerald-300">Website:</strong> <a href="https://www.acaodacidadania.org.br/" target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-blue-400 hover:underline">https://www.acaodacidadania.org.br/</a>
                         </li>
                     </ul>
                 </div>
@@ -485,7 +501,8 @@ const App = () => {
             <div className="space-y-6">
                 {/* Exemplo de Experiência 1: Gerando Falcões (ÚNICA Experiência) */}
                 <article className="p-4 bg-gray-100 dark:bg-gray-600 rounded-lg border-l-4 border-blue-500 dark:border-blue-400 shadow-md">
-                    <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">Experiência de Sucesso: O Modelo da ONG Gerando Falcões</h3>
+                    {/* Redução de fonte em mobile para o título */}
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white mb-2">Experiência de Sucesso: O Modelo da ONG Gerando Falcões</h3>
                     <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">Área: Pobreza e Transformação Social | Iniciativa: Gerando Falcões</p>
                     <p className="text-gray-700 dark:text-gray-200 mb-4">
                         A Gerando Falcões (GF) é considerada uma das experiências mais bem-sucedidas de transformação social em comunidades. Fundada por Edu Lyra, a ONG desenvolveu o conceito de "Favela 3D: Digital, Digna e Desenvolvida", que integra educação, geração de renda, sustentabilidade e políticas públicas. O sucesso do modelo se deve ao uso de gestão profissional, forte integração com o poder público para criar políticas eficientes e o envolvimento direto da comunidade.
