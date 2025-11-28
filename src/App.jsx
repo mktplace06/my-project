@@ -135,7 +135,7 @@ const App = () => {
                 <p className="text-lg font-semibold text-emerald-300 mb-3">
                     A Reflexão Crítica como Motor da Transformação Social.
                 </p>
-                <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight text-white mb-4">
+                <h1 className="text-lg sm:text-6xl font-extrabold leading-tight text-white mb-4">
                     {projectTitle}
                 </h1>
                 <p className="text-xl text-blue-300 max-w-3xl mx-auto">
@@ -561,10 +561,10 @@ const App = () => {
 
                 <div className="space-y-4 text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-600 p-6 rounded-lg border border-gray-200 dark:border-gray-500">
                     <h3 className="xl font-bold text-gray-800 dark:text-white mb-3">Referências dos Conceitos</h3>
-                    <ul className="list-disc ml-6 space-y-3 text-sm">
+                    <ul className="list-disc ml-6 space-y-3 text-sm md:flex flex-col">
                         {references.map((ref, index) => (
                             <li key={index}>
-                                {ref.text} Disponível em: &lt;<a href={ref.url} target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-blue-400 hover:underline">{ref.url}</a>&gt;. Acesso em: 17 nov. 2025.
+                                {ref.text} Disponível em: &lt;<a href={ref.url} target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-blue-400 hover:underline break-all">{ref.url}</a>&gt;. Acesso em: 17 nov. 2025.
                             </li>
                         ))}
                     </ul>
@@ -627,7 +627,7 @@ const App = () => {
                         >
                             {isSidebarOpen ? <CloseIcon /> : <MenuIcon />}
                         </button>
-                        <div className="text-2xl font-extrabold text-emerald-500 dark:text-emerald-300 cursor-pointer" onClick={() => setCurrentPage('home')}>
+                        <div className="text-lg font-extrabold text-emerald-500 dark:text-emerald-300 cursor-pointer" onClick={() => setCurrentPage('home')}>
                             TRABALHO DE ESTUDOS CONTEMPORÂNEOS
                         </div>
                     </div>
