@@ -17,26 +17,6 @@ const CloseIcon = (props) => (
     </svg>
 );
 
-const MoonIcon = (props) => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"></path>
-    </svg>
-);
-
-const SunIcon = (props) => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-        <circle cx="12" cy="12" r="4"></circle>
-        <path d="M12 2v2"></path>
-        <path d="M12 20v2"></path>
-        <path d="M4.93 4.93l1.41 1.41"></path>
-        <path d="M17.66 17.66l1.41 1.41"></path>
-        <path d="M2 12h2"></path>
-        <path d="M20 12h2"></path>
-        <path d="M4.93 19.07l1.41-1.41"></path>
-        <path d="M17.66 6.34l1.41-1.41"></path>
-    </svg>
-);
-
 // Ícones de navegação (REMOVIDOS para atender à solicitação)
 const NavIcon = (props) => (
     <div className="w-5 h-5 mr-3 flex items-center justify-center text-xs font-bold" {...props}>
@@ -126,19 +106,19 @@ const App = () => {
         <div className="min-h-[80vh] flex items-center justify-center text-center rounded-xl shadow-2xl overflow-hidden" 
              style={{ 
                  // ATENÇÃO: SUBSTITUA ESTA URL PELA IMAGEM DE FUNDO ESCOLHIDA
-                 backgroundImage: 'url(https://placehold.co/1200x800/10B981/FFFFFF?text=INSIRA+A+IMAGEM+DE+FUNDO+AQUI)', 
+                //  backgroundImage: 'url(https://placehold.co/1200x800/10B981/FFFFFF?text=INSIRA+A+IMAGEM+DE+FUNDO+AQUI)', 
                  backgroundSize: 'cover', 
                  backgroundPosition: 'center' 
              }}>
             
             <div className="py-20 px-8 bg-black/60 rounded-xl max-w-4xl mx-auto backdrop-blur-sm">
-                <p className="text-lg font-semibold text-emerald-300 mb-3">
+                <p className="text-sm font-semibold text-emerald-300 mb-3 md:text-xl">
                     A Reflexão Crítica como Motor da Transformação Social.
                 </p>
-                <h1 className="text-lg sm:text-6xl font-extrabold leading-tight text-white mb-4">
+                <h1 className="text-lg sm:text-6xl font-extrabold leading-tight text-white mb-4 border-2 border-solid p-1">
                     {projectTitle}
                 </h1>
-                <p className="text-xl text-blue-300 max-w-3xl mx-auto">
+                <p className="text-sm text-blue-300 max-w-3xl mx-auto md:text-xl">
                     Uma análise aprofundada sobre os desafios contemporâneos e as dimensões da sustentabilidade no cenário global.
                 </p>
                 <p className="mt-8 text-sm text-gray-300">
@@ -631,15 +611,6 @@ const App = () => {
                             TRABALHO DE ESTUDOS CONTEMPORÂNEOS
                         </div>
                     </div>
-
-                    {/* Toggle Dark Mode */}
-                    <button
-                        onClick={() => setDarkMode(!darkMode)}
-                        className="text-gray-800 dark:text-yellow-300 focus:outline-none p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600"
-                        aria-label="Toggle Dark Mode"
-                    >
-                        {darkMode ? <SunIcon /> : <MoonIcon />}
-                    </button>
                 </nav>
             </header>
 
